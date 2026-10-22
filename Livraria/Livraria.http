@@ -1,0 +1,45 @@
+@Livraria_HostAddress = http://localhost:5129
+
+### Listar todos
+GET {{Livraria_HostAddress}}/livros
+
+### Buscar um
+GET {{Livraria_HostAddress}}/livros/1
+
+### Criar
+POST {{Livraria_HostAddress}}/livros
+Content-Type: application/json
+
+{
+  "titulo": "Dom Casmurro",
+  "autor": "Machado de Assis",
+  "isbn": "9788535910663",
+  "preco": 29.90,
+  "estoque": 10
+}
+
+### Criar com dados inválidos (400)
+POST {{Livraria_HostAddress}}/livros
+Content-Type: application/json
+
+{
+  "titulo": "",
+  "preco": -5
+}
+
+### Atualizar
+PUT {{Livraria_HostAddress}}/livros/1
+Content-Type: application/json
+
+{
+  "titulo": "Dom Casmurro",
+  "autor": "Machado de Assis",
+  "isbn": "9788535910663",
+  "preco": 34.90,
+  "estoque": 8
+}
+
+### Excluir
+DELETE {{Livraria_HostAddress}}/livros/1
+
+###
